@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>ESG Report</title>
+</head>
+<body>
+    <h1>Draft Double Materiality Matrix</h1>
+    <p><strong>Company:</strong> {{ company.name }} ({{ company.industry }}, {{ company.country }})</p>
+    <p><strong>Scope:</strong> {{ company.scope }}</p>
+    <p><strong>Stakeholders:</strong> {{ company.stakeholders }}</p>
+    <p><strong>Known Impacts:</strong> {{ company.impacts }}</p>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tr>
+            <th>ESRS Topic</th>
+            <th>Impact</th>
+            <th>Financial Risk</th>
+        </tr>
+        {% for topic, impact, risk in matrix %}
+        <tr>
+            <td>{{ topic }}</td>
+            <td>{{ impact }}</td>
+            <td>{{ risk }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>Use this draft as a starting point for your CSRD reporting.</p>
+</body>
+</html>
